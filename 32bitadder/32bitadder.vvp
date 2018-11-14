@@ -1,0 +1,51 @@
+#! /usr/local/Cellar/icarus-verilog/10.2_1/bin/vvp
+:ivl_version "10.2 (stable)" "(v10_2)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x7fb83ae06500 .scope module, "adder32bit_tb" "adder32bit_tb" 2 1;
+ .timescale 0 0;
+v0x7fb83ae16a40_0 .var "abit", 31 0;
+v0x7fb83ae16af0_0 .var "bbit", 31 0;
+v0x7fb83ae16ba0_0 .net "res", 32 0, L_0x7fb83ae16f10;  1 drivers
+S_0x7fb83ae06660 .scope module, "adder32bit_tb" "adder32bit" 2 6, 3 1 0, S_0x7fb83ae06500;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "a"
+    .port_info 1 /INPUT 32 "b"
+    .port_info 2 /OUTPUT 33 "result"
+v0x7fb83ae06810_0 .net *"_s0", 32 0, L_0x7fb83ae16c70;  1 drivers
+L_0x109cf9008 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fb83ae165a0_0 .net *"_s3", 0 0, L_0x109cf9008;  1 drivers
+v0x7fb83ae16650_0 .net *"_s4", 32 0, L_0x7fb83ae16dd0;  1 drivers
+L_0x109cf9050 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v0x7fb83ae16710_0 .net *"_s7", 0 0, L_0x109cf9050;  1 drivers
+v0x7fb83ae167c0_0 .net "a", 31 0, v0x7fb83ae16a40_0;  1 drivers
+v0x7fb83ae168b0_0 .net "b", 31 0, v0x7fb83ae16af0_0;  1 drivers
+v0x7fb83ae16960_0 .net "result", 32 0, L_0x7fb83ae16f10;  alias, 1 drivers
+L_0x7fb83ae16c70 .concat [ 32 1 0 0], v0x7fb83ae16a40_0, L_0x109cf9008;
+L_0x7fb83ae16dd0 .concat [ 32 1 0 0], v0x7fb83ae16af0_0, L_0x109cf9050;
+L_0x7fb83ae16f10 .arith/sum 33, L_0x7fb83ae16c70, L_0x7fb83ae16dd0;
+    .scope S_0x7fb83ae06500;
+T_0 ;
+    %pushi/vec4 285282321, 0, 32;
+    %store/vec4 v0x7fb83ae16a40_0, 0, 32;
+    %pushi/vec4 269553921, 0, 32;
+    %store/vec4 v0x7fb83ae16af0_0, 0, 32;
+    %end;
+    .thread T_0;
+    .scope S_0x7fb83ae06500;
+T_1 ;
+    %vpi_call 2 20 "$dumpfile", "adder32bit.vcd" {0 0 0};
+    %vpi_call 2 21 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x7fb83ae06660 {0 0 0};
+    %vpi_call 2 22 "$monitor", "time = %2d, abit = %8h, bbit = %8h, result = %8h", $time, v0x7fb83ae16a40_0, v0x7fb83ae16af0_0, v0x7fb83ae16ba0_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "32bitadder_tb.v";
+    "32bitadder.v";

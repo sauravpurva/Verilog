@@ -1,5 +1,5 @@
-`include "nand.v"
-`include "not.v"
+`include "../nand/nand.v"
+
 module and_gate(input A, input B, output res);
 
 	wire temp;

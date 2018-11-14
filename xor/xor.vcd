@@ -1,5 +1,5 @@
 $date
-	Thu Aug 30 16:37:04 2018
+	Thu Sep  6 15:11:47 2018
 $end
 $version
 	Icarus Verilog
@@ -15,8 +15,8 @@ $var wire 1 # a $end
 $var wire 1 $ a_comp $end
 $var wire 1 % b $end
 $var wire 1 & b_comp $end
-$var wire 1 ' m $end
-$var wire 1 ( result $end
+$var wire 1 ' f $end
+$var wire 1 ( m $end
 $var wire 1 ) temp $end
 $var wire 1 * x $end
 $var wire 1 + y $end
@@ -34,7 +34,7 @@ $var wire 1 / vdd $end
 $upscope $end
 $scope module not_temp3 $end
 $var wire 1 ) a $end
-$var wire 1 ( f $end
+$var wire 1 ' f $end
 $var wire 1 0 gnd $end
 $var wire 1 1 vdd $end
 $upscope $end
@@ -52,8 +52,8 @@ $dumpvars
 0+
 z*
 1)
-0(
-1'
+1(
+0'
 1&
 0%
 1$
@@ -63,7 +63,7 @@ z*
 $end
 #10
 0*
-1(
+1'
 0)
 z+
 0&
@@ -71,18 +71,18 @@ z+
 #20
 z*
 0+
-z'
+z(
 1&
 0%
-1(
+1'
 0)
 0$
 1#
 #30
 0*
 z+
-0(
+0'
 1)
-1'
+1(
 0&
 1%

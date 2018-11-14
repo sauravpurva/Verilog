@@ -6,7 +6,7 @@ wire res;
 xor_gate xor_tb(
 	.a(abit),
 	.b(bbit),
-	.result(res)
+	.f(res)
 );
 
 	initial

@@ -1,5 +1,4 @@
-`include "nor.v"
-`include "not.v"
+`include "../nor/nor.v"
 module or_gate(input A, input B, output res);
 
 	wire temp;

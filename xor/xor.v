@@ -1,5 +1,5 @@
-`include "not.v"
-module xor_gate(input a, input b, output result);
+`include "../not/not.v"
+module xor_gate(input a, input b, output f);
 
 	wire a_comp, b_comp;
 	wire x,y;
@@ -31,7 +31,7 @@ module xor_gate(input a, input b, output result);
 
 	not_gate not_temp3(
 		.a(temp),
-		.f(result)
+		.f(f)
 	);
 
 endmodule
